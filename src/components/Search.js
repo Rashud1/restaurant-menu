@@ -7,7 +7,7 @@ function Search() {
     const[input, setInput] = useState('');
     const navigate = useNavigate()
     const submitHandler = (e)=>{
-     e.prevent.Default()
+     e.preventDefault()
      navigate('/searched/'+ input)
     }
   return (
@@ -20,17 +20,18 @@ function Search() {
   )
 }
 const FormStyle = styled.form`
-margin: 0rem 20rem;
+margin: 2rem auto;
 div{
+    margin:auto;
     position: relative;
-    width:100%;
+    width:50%;
 }
 input{
   border:none;
   background: linear-gradient(35deg, #494949, #313131) ;
   color: white;
   padding: 1rem 3rem;
-  border: none;
+  border:none;
   border-radius: 1rem;
   outline: none;
   width: 100%;

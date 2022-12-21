@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 function Searched() {
 const[searchedRecipes, setSearchedRecipes] = useState([])
-let params= useParams
+let params= useParams()
   const getSearched= async(name) =>{
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
+    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`);
     const recipes= await data.json()
     setSearchedRecipes(recipes.results)
 }
